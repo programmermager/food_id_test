@@ -6,6 +6,7 @@ import 'package:food_id/services/endpoint.dart';
 import 'package:food_id/utils/spacing.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../services/api_services.dart';
 import '../../utils/theme.dart';
@@ -49,6 +50,14 @@ class MainController extends GetxController {
         margin: EdgeInsets.all(wValue(15)),
         backgroundColor: colorPrimary,
         colorText: Colors.white);
+  }
+
+  launchURL(String url, {bool? enableJs, bool? forceWebview}) async {
+    await launch(
+      url,
+      enableJavaScript: (enableJs != null) ? enableJs : false,
+      forceWebView: (forceWebview != null) ? forceWebview : false,
+    );
   }
 
   @override

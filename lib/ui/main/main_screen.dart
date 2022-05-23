@@ -184,7 +184,9 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                controller.launchURL(i.page_url!);
+              },
             );
           },
         );
@@ -207,7 +209,9 @@ class _MainScreenState extends State<MainScreen> {
               fit: BoxFit.fill,
             ),
           ),
-          onTap: () {},
+          onTap: () {
+            controller.launchURL(controller.smallBanners[index].page_url!);
+          },
         ),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
             crossAxisCount: 2,
